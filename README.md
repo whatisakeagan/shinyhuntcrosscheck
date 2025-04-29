@@ -43,4 +43,4 @@ OR
 
 Clone directly using Git:
 ```bash
-git clone https://github.com/your-username/shiny-hunt-crosscheck.git
+git clone https://github.com/your-username/shinyhuntcrosscheck.git
