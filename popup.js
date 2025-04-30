@@ -8,9 +8,9 @@ document.getElementById('scanButton').addEventListener('click', async () => {
     target: { tabId: tab.id },
     func: scanPokemon,
   }, (injectedResults) => {
-    const pageCapturedPokemon = injectedResults[0].result;
+    const notCapturedPokemon = injectedResults[0].result;
     const notCaptured = userList.filter(name => 
-      !pageCapturedPokemon.includes(name)
+      notCapturedPokemon.includes(name)
     );
 
     document.getElementById('resultArea').innerText = notCaptured.join('\n');
@@ -25,17 +25,17 @@ document.getElementById('scanButton').addEventListener('click', async () => {
 
 function scanPokemon() {
   const allPokemonDivs = document.querySelectorAll('.pokemon');
-  const capturedNames = [];
+  const notCapturedNames = [];
 
   allPokemonDivs.forEach(div => {
-    const isCaptured = div.classList.contains('captured');
-    if (isCaptured) {
+    const notCaptured = !div.classList.contains('captured');
+    if (notCaptured) {
       const nameElement = div.querySelector('h4');
       if (nameElement) {
-        capturedNames.push(nameElement.innerText.trim().toLowerCase());
+        notCapturedNames.push(nameElement.innerText.trim().toLowerCase());
       }
     }
   });
 
-  return capturedNames;
+  return notCapturedNames;
 }
