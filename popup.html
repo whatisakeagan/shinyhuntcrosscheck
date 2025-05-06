@@ -2,14 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Shiny Hunt Cross-Check</title>
+  <title>✨Shiny Hunt Cross-Check✨</title>
   <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <h2>Shiny Hunt Cross-Check</h2>
+  <h2>✨Shiny Hunt Cross-Check✨</h2>
+
+  <!-- Text input area: user pastes Pokémon names (one per line) -->
   <textarea id="pokemonList" placeholder="Paste Pokémon names, one per line..."></textarea>
+
+  <!-- Button to trigger the scan against the current tab -->
   <button id="scanButton">Scan Now</button>
+
+  <!-- Result area: shows Pokémon not found on page -->
   <div id="resultArea"></div>
+
+  <!-- Hidden button to copy results to clipboard (shown after scan) -->
   <button id="copyButton" style="display:none;">Copy Results</button>
 
   <script src="popup.js"></script>
